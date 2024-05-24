@@ -1,20 +1,23 @@
+# Changes by Stefan Spiss:
+#   - Updated package versions and added imgaug
+
 pyyaml
 tqdm
 numpy
-easydict==1.9.0
-scikit-image==0.17.2
-scikit-learn==0.24.2
+easydict==1.13
+scikit-image==0.23.2
+scikit-learn==1.5.0
 opencv-python
 tensorflow
 joblib
 matplotlib
 pandas
-albumentations==0.5.2
-hydra-core==1.1.0
-pytorch-lightning==1.2.9
+albumentations==1.4.7
+hydra-core==1.3.2
+pytorch-lightning==2.2.5
 tabulate
-kornia==0.5.0
+kornia==0.7.2
 webdataset
 packaging
-scikit-learn==0.24.2
 wldhx.yadisk-direct
+imgaug

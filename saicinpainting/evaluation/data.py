@@ -1,3 +1,6 @@
+# Changes by Stefan Spiss:
+#   - Updated InpaintingDataset to have additional parameter to set the file extension of masks (mask_ext).
+
 import glob
 import os
 
@@ -56,9 +59,9 @@ def scale_image(img, factor, interpolation=cv2.INTER_AREA):
 
 
 class InpaintingDataset(Dataset):
-    def __init__(self, datadir, img_suffix='.jpg', pad_out_to_modulo=None, scale_factor=None):
+    def __init__(self, datadir, img_suffix='.jpg', mask_ext='.png', pad_out_to_modulo=None, scale_factor=None):
         self.datadir = datadir
-        self.mask_filenames = sorted(list(glob.glob(os.path.join(self.datadir, '**', '*mask*.png'), recursive=True)))
+        self.mask_filenames = sorted(list(glob.glob(os.path.join(self.datadir, '**', '*mask*' + mask_ext), recursive=True)))
         self.img_filenames = [fname.rsplit('_mask', 1)[0] + img_suffix for fname in self.mask_filenames]
         self.pad_out_to_modulo = pad_out_to_modulo
         self.scale_factor = scale_factor
